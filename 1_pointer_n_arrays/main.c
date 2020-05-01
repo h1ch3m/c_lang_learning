@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void array_manipulations();
 
@@ -98,7 +97,7 @@ void pointer_manipulations(){
     // large byte arrays (files or streams of data).
     // Also be aware of the stack vs heap memory regions.
     // Unallocated pointers still points stack memory addresses
-    // and cannot be returned after function call
+    // and cannot (should not) be returned after function call
     // @see pointers chapters there http://www2.cs.uregina.ca/~hilder/cs833/Other%20Reference%20Materials/The%20C%20Programming%20Language.pdf
 }
 
@@ -151,7 +150,7 @@ void pointer_array_decay(){
     // exemple : int *pIntA  = &i; *(pIntA + 1) = 11;
     // This is because we dont know what address pIntA + 1 is used for
     // The program will sometimes work and sometimes crash (exemple: reserved memory place, permission to access denied, etc.)
-    int *pIntA = malloc(6 * sizeof(int));
+    int *pIntA = malloc(5 * sizeof(int));
 
     // Always test if allocation is OK
     if( pIntA == NULL){
