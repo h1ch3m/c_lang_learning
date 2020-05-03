@@ -8,8 +8,11 @@ void pointer_manipulations();
 void pointer_array_decay();
 
 int main(int argc, char** argv) {
+
     array_manipulations();
+
     pointer_manipulations();
+
     pointer_array_decay();
 }
 
@@ -105,7 +108,7 @@ void pointer_manipulations(){
 void pointer_array_decay(){
     printf("\n*** Pointers and arrays equivalences ***\n");
     /**
-        Pointers are array are two referencing
+        Pointers and arrays are two referencing
         data structure in C language.
         There is equivalence between the two of them
 

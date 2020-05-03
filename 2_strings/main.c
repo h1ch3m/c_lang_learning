@@ -33,7 +33,7 @@ void basic_strings(){
     // but not : char *cp = { 't','h','i','s',' ','i','s',' ','g','r','e','a','t','\0' }
     // since the inline arrays are not the reference (we need a declaration) - /!\ not sure about the explanation
 
-    printf("*c string is : %c \n", cp);
+    printf("*c string is : %s \n", cp);
 
     // chars are 1 byte sized type
     // notice that \0 == 0x00
@@ -114,9 +114,9 @@ void encoding(){
 
     // reduce the problem
     printf("Size of E = %d \n", strlen("E"));   // give 1
-    printf("Size of € = %d \n", strlen("€ "));  // give 4
+    printf("Size of € = %d \n", strlen("€"));  // give 3
 
-    // Since we need 4 bytes to encode € sign (this is utf-8, a variable length encoding)
+    // Since we need 3 bytes to encode € sign (this is utf-8, a variable length encoding)
     // we cannot do char c = '€'
     char c = '€';
     //printf("Char = %c \n", c);
