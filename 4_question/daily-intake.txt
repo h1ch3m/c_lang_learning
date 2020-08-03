@@ -1,0 +1,13 @@
+liste des aliment mangee: 
+Wed Jul 01 22:09:10 2020
+150 grammes de raisin proteins=1 / carbs=25 / fats=1 / calories=113
+Wed Jul 01 22:09:10 2020
+150 grammes de citronade_sucre proteins=0 / carbs=25 / fats=0 / calories=100
+Wed Jul 01 22:09:10 2020
+200 grammes de mlokhiya proteins=46 / carbs=24 / fats=4 / calories=316
+Wed Jul 01 22:09:10 2020
+250 grammes de bread proteins=22 / carbs=122 / fats=7 / calories=639
+Wed Jul 01 22:09:10 2020
+30 grammes de gouta proteins=2 / carbs=1 / fats=3 / calories=39
+Wed Jul 01 22:09:10 2020
+30 grammes de nutella proteins=2 / carbs=16 / fats=9 / calories=153
