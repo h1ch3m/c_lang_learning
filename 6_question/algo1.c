@@ -2,41 +2,43 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct liste
+typedef struct int_list
 {
     int i;
-    struct liste *ptr;
+    struct int_list *ptr;
 
-} liste;
+} int_list;
 
-void new (liste **newone)
+int_list* new_int_list()
 {
-    *newone = (liste *) malloc(sizeof(liste));
+    return (int_list *) malloc(sizeof(int_list));
 }
 
-void extraction(int tab[3], liste **first, liste **liste1)
+int_list* to_int_list(int tab[], int size)
 {
-    int i = 2;
+    int_list* current = new_int_list();
+    int_list* head = current;
+    for (int i = 0; i < size; i++) {
+        current->i = tab[i];
+        if (i < size - 1) {
+            current->ptr = new_int_list();
+            current = current->ptr;
+        }else {
+            current->ptr = NULL;
+        }
 
-    *first = NULL;
-    while (i >= 0)
-    {
-        new (liste1);
-        (*liste1)->i = tab[i];
-        (*liste1)->ptr = *first;
-        *first = *liste1;
-        i--;
     }
+    return head;
 }
 
-void print_linked_list(liste *node) {
+void print_linked_list(int_list *node) {
     if (node != NULL) {
         printf("-> %d", node->i);
         print_linked_list(node->ptr);
     }
 }
 
-void free_linked_list(liste *node) {
+void free_linked_list(int_list *node) {
     if (node != NULL) {
         free_linked_list(node->ptr);
         // we always need to free every allocated memory
@@ -49,11 +51,11 @@ void free_linked_list(liste *node) {
 
 void main()
 {
-    liste *liste1, *newoneptr;
     int tab[3] = {1, 2, 3};
-    extraction(tab, &liste1, &newoneptr);
-    print_linked_list(liste1);
-    free_linked_list(liste1);
+    int_list* head = to_int_list(tab, 3);
+
+    print_linked_list(head);
+    free_linked_list(head);
     printf("\n all done \n");
     // this can (or not) rise access violation error
     // print_linked_list(liste1);
